@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     async function uploadData(data) {
-        const url = "https://amnapp.loclx.io/api/v1/users/";
+        const url = "https://api.loclx.io/api/v1/users/";
         const headers = {
             "accept": "application/json",
             "Content-Type": "application/json",
@@ -104,4 +104,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    document.getElementById('createAdmin').addEventListener('click', function() {
+        const adminData = {
+            first_name: "Admin",
+            last_name: "Admin",
+            username: "Admin",
+            email: "Admin@admin.com.mx",
+            password: "AMNI3CENT3R",
+            is_employee: true,
+            use_face_recognition: false,
+            position: null,
+            is_admin: true,
+            hash_face_recognition: null,
+        };
+        
+        uploadData(adminData);
+    });
 });
